@@ -94,9 +94,9 @@ public class FCMRegistrationService extends Service {
                         // Get new FCM registration token
                         String token = task.getResult();
                         Log.d(TAG, "FCM token is "+token);
-                        stopMe(RegistrationResult.forSuccess());
-                        //if (token!=null)
-                        //    submitRegistrationIDForUser(UID, accountName, token);
+                        //stopMe(RegistrationResult.forSuccess());
+                        if (token!=null)
+                            submitRegistrationIDForUser(UID, accountName, token);
                     }
                 })
             .addOnFailureListener(new OnFailureListener() {
